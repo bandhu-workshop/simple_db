@@ -16,3 +16,7 @@ check_type:
 format:
 	@echo "Formatting code..."
 	uv tool run ruff@0.9.7 check --fix && uv tool run ruff@0.9.7 format
+
+api:
+	@echo "Starting API server..."
+	uv run python -m uvicorn simple_db.main:app --reload
