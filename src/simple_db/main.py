@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from simple_db.api import users
+from simple_db.api import items, users
 from simple_db.database import create_db_and_tables
 
 
@@ -22,6 +22,7 @@ app = FastAPI(
 )
 
 app.include_router(users.router, prefix="/api/v1/users", tags=["users"])
+app.include_router(items.router, prefix="/api/v1/items", tags=["items"])
 
 
 @app.get("/health")

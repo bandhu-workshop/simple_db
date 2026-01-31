@@ -10,6 +10,11 @@ class UserCreate(SQLModel):
     name: str
 
 
+class UserUpdate(SQLModel):
+    email: Optional[EmailStr] = None
+    name: Optional[str] = None
+
+
 class UserResponse(SQLModel):
     id: Optional[int] = None
     email: str
