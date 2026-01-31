@@ -19,4 +19,9 @@ format:
 
 api:
 	@echo "Starting API server..."
-	uv run python -m uvicorn simple_db.main:app --reload
+	uv run python -m uvicorn simple_db.main:app --host 0.0.0.0 --port=8080 --reload
+
+seed_users:
+	@echo "Seeding users into the database..."
+	uv run python scripts/seed_users.py
+# 	PYTHONPATH=src uv run python scripts/seed_users.py
